@@ -15,16 +15,16 @@ You should create one R script called run_analysis.R that does the following.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.  
 
 Adding the required libraries
-```{r}
+```{r message=FALSE, warning=FALSE,results='hide'}
 library(data.table)
 library(dplyr)
 ```
   
 Downloading and unziping the files
 ```{r}
-url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file(url, file.path("./dataset/", "dataFiles.zip"))
-unzip(zipfile = "./dataset/dataFiles.zip")
+#url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+#download.file(url, file.path("./dataset/", "dataFiles.zip"))
+#unzip(zipfile = "./dataset/dataFiles.zip")
 ```  
   
 Reading activity label
@@ -74,7 +74,7 @@ Creating tidy data set with the average of each variable for each activity and e
 ```{r}
 tidy_data <- dataset %>% group_by(Subject_Num,Activity) %>% summarise_all(.funs = mean)
 fwrite(x = tidy_data,file = "./UCI HAR Dataset/tidy_data")
-head(tidy_data)
+knitr::kable(head(tidy_data), "pandoc")
 ```
 
 
