@@ -36,7 +36,7 @@ dev.off()
     ## png 
     ##   2
 
-![](Answer_files/figure-markdown_github/unnamed-chunk-3-1.png)
+![](Figs/unnamed-chunk-3-1.png)
 
 2.Have total emissions from PM2.5 decreased in the Baltimore City,
 Maryland (fips == “24510”) from 1999 to 2008? Use the base plotting
@@ -53,7 +53,7 @@ dev.off()
     ## png 
     ##   2
 
-![](Answer_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](Figs/unnamed-chunk-5-1.png)
 
 3.Of the four types of sources indicated by the type (point, nonpoint,
 onroad, nonroad) variable, which of these four sources have seen
@@ -75,14 +75,7 @@ dev.off()
     ## png 
     ##   2
 
-``` r
-ggplot(data = temp,mapping = aes(x = factor(year),y = Emissions))+geom_bar(stat = "identity",fill = "skyblue3")+facet_grid(~type)+
-        xlab(c("1997","2002", "2005","2008"))+labs(x="year", y=expression("Total PM"[2.5]*" Emission (Tons)"))+
-        labs(title=expression("PM"[2.5]*" Emissions, Baltimore City 1999-2008 by Source Type"))+
-        theme(plot.title = element_text(hjust = 0.5))
-```
-
-![](Answer_files/figure-markdown_github/unnamed-chunk-7-1.png)
+![](Figs/unnamed-chunk-7-1.png)
 
 4.Across the United States, how have emissions from coal
 combustion-related sources changed from 1999–2008?
@@ -106,7 +99,7 @@ dev.off()
     ## png 
     ##   2
 
-![](Answer_files/figure-markdown_github/unnamed-chunk-9-1.png)
+![](Figs/unnamed-chunk-9-1.png)
 
 5.How have emissions from motor vehicle sources changed from 1999–2008
 in Baltimore City?
@@ -129,7 +122,7 @@ dev.off()
     ## png 
     ##   2
 
-![](Answer_files/figure-markdown_github/unnamed-chunk-11-1.png)
+![](Figs/unnamed-chunk-11-1.png)
 
 6.Compare emissions from motor vehicle sources in Baltimore City with
 emissions from motor vehicle sources in Los Angeles County, California
@@ -159,4 +152,4 @@ dev.off()
     ## png 
     ##   2
 
-![](Answer_files/figure-markdown_github/unnamed-chunk-13-1.png)
+![](Figs/unnamed-chunk-13-1.png)
